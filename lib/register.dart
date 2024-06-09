@@ -1,15 +1,14 @@
-import 'package:books_store_ilham/page3.dart';
-import 'package:books_store_ilham/register.dart';
+import 'package:books_store_ilham/page2.dart';
 import 'package:flutter/material.dart';
 
-class Page2 extends StatelessWidget {
-  const Page2({super.key});
+class SingUp extends StatelessWidget {
+  const SingUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       appBar: AppBar(),
+      backgroundColor: Colors.grey[100],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -22,7 +21,7 @@ class Page2 extends StatelessWidget {
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                         color: Colors.blue),
-                    "LOGIN "),
+                    "SING UP "),
                 Text(
                     style: TextStyle(
                         fontSize: 30,
@@ -32,12 +31,12 @@ class Page2 extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 45,
             ),
             Container(
               padding: const EdgeInsets.all(20.0),
               width: 280,
-              height: 260,
+              height: 350,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20.0)),
@@ -95,6 +94,32 @@ class Page2 extends StatelessWidget {
                               OutlineInputBorder(borderSide: BorderSide.none)),
                     ),
                   ),
+                  const Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Confirm Password"),
+                    ],
+                  ),
+                  Container(
+                    width: 230,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const TextField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          hintText: "Confirm Password",
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                          ),
+                          border:
+                              OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  ),
                   const SizedBox(
                     height: 15,
                   ),
@@ -107,9 +132,9 @@ class Page2 extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15))),
                       onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(
+                        Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return const Page3();
+                            return const Page2();
                           },
                         ));
                       },
@@ -118,28 +143,27 @@ class Page2 extends StatelessWidget {
                               fontSize: 17,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
-                          "Login"),
+                          "Sing Up"),
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 45.0, left: 99),
+              padding: const EdgeInsets.only(right: 45.0, left: 126),
               child: Row(
                 children: [
-                  const Text("Dosn't have account?"),
+                  const Text("Already have account?"),
                   TextButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return const SingUp();
+                            return const Page2();
                           },
                         ));
                       },
                       child: const Text(
-                          style: TextStyle(color: Colors.black),
-                          "Register Now."))
+                          style: TextStyle(color: Colors.black), "Login."))
                 ],
               ),
             )
