@@ -6,11 +6,79 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset('assets/images/bg-book.png')
-        ],
-      ),
-    );
+        body: Stack(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/bg.png'), fit: BoxFit.cover),
+            ),
+          ),
+        ),
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue),
+                      "book "),
+                  Text(
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange),
+                      "store"),
+                ],
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              SizedBox(
+                height: 50,
+                width: 270,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[200],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                            style: TextStyle(fontSize: 15, color: Colors.black),
+                            "Get Started"),
+                        const SizedBox(
+                          width: 116,
+                        ),
+                        Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white),
+                            child: const Icon(
+                                color: Colors.black,
+                                size: 20,
+                                Icons.arrow_forward))
+                      ],
+                    )),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+            ],
+          ),
+        )
+      ],
+    ));
   }
 }
