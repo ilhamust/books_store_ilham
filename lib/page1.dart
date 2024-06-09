@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:books_store_ilham/page2.dart';
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/bg.png'), fit: BoxFit.cover),
+                  image: AssetImage('assets/images/bg-bk.png'), fit: BoxFit.cover),
             ),
           ),
         ),
@@ -49,7 +49,13 @@ class Home extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return Page2();
+                      },
+                      
+                      ));
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
